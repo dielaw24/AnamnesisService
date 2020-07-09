@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("api/dg")
 @CrossOrigin (origins="*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.DELETE, RequestMethod.PUT})
 public class DiseaseGroupController {
+
+    //prueba , borrar esto despues
     @Autowired
     DiseaseGroupRepository dg;
 
