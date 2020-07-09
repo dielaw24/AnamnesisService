@@ -5,10 +5,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/index")
+@RequestMapping("/api")
 public class DemoController {
+
     @GetMapping("/home")
-    public ResponseEntity<String> get() {
-        return ResponseEntity.ok("Hello World!");
+    public String getHome(){
+        return ("Home Page");
     }
+//    public ResponseEntity<String> get() {
+//        return ResponseEntity.ok("Hello World!");
+//    }
 }
