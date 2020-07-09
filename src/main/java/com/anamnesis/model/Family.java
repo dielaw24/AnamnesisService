@@ -19,6 +19,8 @@ public class Family {
     private String disease;
     @Column(name="relacion")
     private String relationship;
+    @Column(name = "fuente")
+    private String source;
 
     //Relacion ManytoMany
     // relacion antecedentes familiares / clase Anamnesis
@@ -63,6 +65,14 @@ public class Family {
 
     public void setRelationship(String relationship) {
         this.relationship = relationship;
+    }
+
+    public String getSource() {
+        return source;
+    }
+
+    public void setSource(String source) {
+        this.source = source;
     }
 
     public List<Anamnesis> getAnamneses() {

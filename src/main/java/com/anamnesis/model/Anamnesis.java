@@ -18,11 +18,13 @@ public class Anamnesis {
     private String actual_disease;
     @Column(name = "fecha_padecimiento")
     private Date condition_Date;
+
     //claves foraneas No locales
     @Column(name = "id_examen_fisico")
     private int id_physical_exam;    // id lo obtenemos del microservicio de examen fisico
     @Column(name = "id_paciente")
     private int id_patient;  // id lo obtenemos del microservicio de historial clinico, id atencion o historial o paciente o todos
+
     //claves foraneas locales/ Relacion ManyToOne
     //antecedentes personales patologicos
     @ManyToOne(fetch = FetchType.LAZY)
@@ -51,6 +53,8 @@ public class Anamnesis {
     @OneToMany(mappedBy = "anamnesis")
     private List<Work_History> work_histories;
 
+    //Relacion diagnostico presuntivo
+    @OneToMany
 
     public int getId() {
         return id;

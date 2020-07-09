@@ -1,8 +1,12 @@
 package com.anamnesis.model;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "Diagnostico_Presuntivo")
 public class PresumptiveDiagnostic {
     @Id
     @Column(name = "id_diagnostico_presuntivo")

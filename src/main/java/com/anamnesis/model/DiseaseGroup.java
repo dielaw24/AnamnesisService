@@ -1,8 +1,12 @@
 package com.anamnesis.model;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="Grupo_Enfermedad")
 public class DiseaseGroup {
     @Id
     @Column(name = "id_grupo_enfermedad")
