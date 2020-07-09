@@ -5,10 +5,10 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 @Entity
-@Table(name="Antecedentes_Laborales")
-public class Work_history {
+@Table(name="Trabajo")
+public class Work {
     @Id
-    @Column(name = "id_antecedentes_laborales")
+    @Column(name = "id_trabajo")
     private int id;
     @Column(name="trabajo")
     private String work;
