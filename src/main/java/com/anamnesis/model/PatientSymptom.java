@@ -1,34 +1,19 @@
 package com.anamnesis.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "Sintomas_Paciente")
 public class PatientSymptom {
+
+
     @Id
-    private int id_anamnesis;
-    @Id
-    @Column(name = "id_sintoma")
-    private int id_symptom;
+    @Column(name = "id_sintomas_paciente")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id_symptom_patient;
 
-    public int getId_anamnesis() {
-        return id_anamnesis;
-    }
 
-    public int getId_symptom() {
-        return id_symptom;
-    }
 
-    public void setId_anamnesis(int id_anamnesis) {
-        this.id_anamnesis = id_anamnesis;
-    }
-
-    public void setId_symptom(int id_symptom) {
-        this.id_symptom = id_symptom;
-    }
 
 
 }

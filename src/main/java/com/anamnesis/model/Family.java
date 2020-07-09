@@ -24,8 +24,9 @@ public class Family {
 
     //Relacion ManytoMany
     // relacion antecedentes familiares / clase Anamnesis
-    @ManyToMany(mappedBy = "familyList")
-    private List<Anamnesis> anamneses;
+    @OneToMany(mappedBy = "family")
+    private List<FamilyHistory> familyHistoryList;
+
 
     public int getId() {
         return id;
@@ -75,11 +76,11 @@ public class Family {
         this.source = source;
     }
 
-    public List<Anamnesis> getAnamneses() {
-        return anamneses;
+    public List<FamilyHistory> getFamilyHistoryList() {
+        return familyHistoryList;
     }
 
-    public void setAnamneses(List<Anamnesis> anamneses) {
-        this.anamneses = anamneses;
+    public void setFamilyHistoryList(List<FamilyHistory> familyHistoryList) {
+        this.familyHistoryList = familyHistoryList;
     }
 }

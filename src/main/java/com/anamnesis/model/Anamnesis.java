@@ -40,23 +40,22 @@ public class Anamnesis {
     private Housing_conditions housing_conditions;
 
     //Relaciones ManyToMany
+
     //Relacion antecedentes familiares / clase Family
-    @ManyToMany
-    @JoinTable(
-            name = "Antecedentes_Familiares",
-            joinColumns = @JoinColumn(name = "id_anamnesis"),
-            inverseJoinColumns = @JoinColumn(name = "id_familiar")
-    )
-    private List<Family> familyList;
+    @OneToMany(mappedBy = "anamnesis")
+    private List<FamilyHistory> familyHistoryList;
 
     //Relacion antecedentes laborales / clases work y work_history
     @OneToMany(mappedBy = "anamnesis")
-    private List<Work_History> workHistoryList;
+    private List<WorkHistory> workHistoryList;
 
-    //Relacion diagnostico presuntivo
+    //Relacion diagnostico presuntivo / clases Disease y PresumptiveDiagnostic
     @OneToMany(mappedBy = "anamnesis")
     private List<PresumptiveDiagnostic> presumptiveDiagnosticList;
 
+    //Relacion Sintomas Paciente / clases Symptoms y PatientSymptoms
+    @OneToMany(mappedBy = "anamnesis")
+    private List<PatientSymptom> patientSymptomList;
 
 
     public int getId() {
@@ -131,19 +130,19 @@ public class Anamnesis {
         this.actual_disease = actual_disease;
     }
 
-    public List<Family> getFamilyList() {
-        return familyList;
+    public List<FamilyHistory> getFamilyHistoryList() {
+        return familyHistoryList;
     }
 
-    public void setFamilyList(List<Family> familyList) {
-        this.familyList = familyList;
+    public void setFamilyHistoryList(List<FamilyHistory> familyHistoryList) {
+        this.familyHistoryList = familyHistoryList;
     }
 
-    public List<Work_History> getWorkHistoryList() {
+    public List<WorkHistory> getWorkHistoryList() {
         return workHistoryList;
     }
 
-    public void setWorkHistoryList(List<Work_History> workHistoryList) {
+    public void setWorkHistoryList(List<WorkHistory> workHistoryList) {
         this.workHistoryList = workHistoryList;
     }
 
@@ -154,5 +153,15 @@ public class Anamnesis {
     public void setPresumptiveDiagnosticList(List<PresumptiveDiagnostic> presumptiveDiagnosticList) {
         this.presumptiveDiagnosticList = presumptiveDiagnosticList;
     }
+
+    public List<PatientSymptom> getPatientSymptomList() {
+        return patientSymptomList;
+    }
+
+    public void setPatientSymptomList(List<PatientSymptom> patientSymptomList) {
+        this.patientSymptomList = patientSymptomList;
+    }
+
+    
 }
 

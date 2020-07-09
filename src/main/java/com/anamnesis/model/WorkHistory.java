@@ -5,7 +5,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "Antecedentes_Laborales")
-public class Work_History {
+public class WorkHistory {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
