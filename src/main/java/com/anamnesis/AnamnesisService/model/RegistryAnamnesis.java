@@ -1,10 +1,7 @@
 package com.anamnesis.AnamnesisService.model;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 /*
@@ -16,9 +13,12 @@ import java.util.Date;
 @Table(name = "Registro_Anamnesis")
 public class RegistryAnamnesis {
     @Id
+    @Column(name = "id_registro")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id_register;
+
     @Column(name = "id_anamnesis")
     private int id_anamnesis;
-    @Id
     @Column(name = "id_personal_medico")
     private int id_medical_staff;
     @Column (name = "fecha_anamnesis")

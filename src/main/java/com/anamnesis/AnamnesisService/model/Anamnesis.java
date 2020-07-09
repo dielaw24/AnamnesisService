@@ -32,11 +32,11 @@ public class Anamnesis {
     private Pathological_personal_history pathological_personal_history;
     //antecedentes personales no patologicos
     @ManyToOne
-    @Column(name = "id_antecedente_p_no_patologico")
+    @JoinColumn(name = "id_antecedente_p_no_patologico")
     private No_Pathological_personal_history no_pathological_personal_history;
     //condiciones vivienda
     @ManyToOne
-    @Column(name = "id_condiciones_vivienda")
+    @JoinColumn(name = "id_condiciones_vivienda")
     private Housing_conditions housing_conditions;
 
     //Relaciones ManyToMany

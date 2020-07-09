@@ -1,15 +1,13 @@
 package com.anamnesis.AnamnesisService.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name="Condiciones_Vivienda")
 public class Housing_conditions {
     @Id
     @Column(name = "id_condiciones_vivienda")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     @Column(name="tipo_vivienda")
     private String house_type;
