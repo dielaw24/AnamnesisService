@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "Grupo_Sintoma")
-public class SymptomsGroup {
+public class SymptomGroup {
     @Id
     @Column(name = "id_grupo_sintoma")
     private int id_symptom_group;
