@@ -1,4 +1,5 @@
 package com.anamnesis.model;
 
-public class PatientSymptoms {
+public class SymptomsGroup {
+
 }
