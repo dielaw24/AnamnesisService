@@ -35,4 +35,16 @@ public class RegistryAnamnesis {
     public Date getAnamnesis_date() {
         return anamnesis_date;
     }
+
+    public void setId_anamnesis(int id_anamnesis) {
+        this.id_anamnesis = id_anamnesis;
+    }
+
+    public void setId_medical_staff(int id_medical_staff) {
+        this.id_medical_staff = id_medical_staff;
+    }
+
+    public void setAnamnesis_date(Date anamnesis_date) {
+        this.anamnesis_date = anamnesis_date;
+    }
 }

@@ -29,4 +29,20 @@ public class PresumptiveDiagnostic {
     public int getId_disease() {
         return id_disease;
     }
+
+    public void setId_diagnostic(int id_diagnostic) {
+        this.id_diagnostic = id_diagnostic;
+    }
+
+    public void setPresumptive_diagnostic(String presumptive_diagnostic) {
+        this.presumptive_diagnostic = presumptive_diagnostic;
+    }
+
+    public void setId_anamnesis(int id_anamnesis) {
+        this.id_anamnesis = id_anamnesis;
+    }
+
+    public void setId_disease(int id_disease) {
+        this.id_disease = id_disease;
+    }
 }

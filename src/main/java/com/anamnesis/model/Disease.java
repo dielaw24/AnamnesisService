@@ -17,4 +17,12 @@ public class Disease {
     public int getDisease() {
         return disease;
     }
+
+    public void setId_disease(int id_disease) {
+        this.id_disease = id_disease;
+    }
+
+    public void setDisease(int disease) {
+        this.disease = disease;
+    }
 }

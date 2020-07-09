@@ -26,5 +26,6 @@ public class Work {
     public void setActivity_description(String activity_description) { this.activity_description = activity_description; }
 
     public String getActivity_description() { return activity_description; }
+    
 
 }

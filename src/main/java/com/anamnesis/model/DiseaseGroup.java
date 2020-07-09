@@ -17,4 +17,12 @@ public class DiseaseGroup {
     public String getDisease_group() {
         return disease_group;
     }
+
+    public void setId_disease_group(int id_disease_group) {
+        this.id_disease_group = id_disease_group;
+    }
+
+    public void setDisease_group(String disease_group) {
+        this.disease_group = disease_group;
+    }
 }

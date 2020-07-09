@@ -21,4 +21,14 @@ public class PatientSymptom {
     public int getId_symptom() {
         return id_symptom;
     }
+
+    public void setId_anamnesis(int id_anamnesis) {
+        this.id_anamnesis = id_anamnesis;
+    }
+
+    public void setId_symptom(int id_symptom) {
+        this.id_symptom = id_symptom;
+    }
+
+
 }

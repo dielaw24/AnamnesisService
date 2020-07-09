@@ -21,4 +21,12 @@ public class SymptomGroup {
     public String getSymptom_group() {
         return symptom_group;
     }
+
+    public void setId_symptom_group(int id_symptom_group) {
+        this.id_symptom_group = id_symptom_group;
+    }
+
+    public void setSymptom_group(String symptom_group) {
+        this.symptom_group = symptom_group;
+    }
 }
