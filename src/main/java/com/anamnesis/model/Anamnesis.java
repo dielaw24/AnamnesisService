@@ -47,6 +47,10 @@ public class Anamnesis {
     )
     private List<Family> familyList;
 
+    //Relacion antecedentes laborales / clases work y work_history
+    @OneToMany(mappedBy = "anamnesis")
+    private List<Work_History> work_histories;
+
 
     public int getId() {
         return id;
@@ -126,6 +130,14 @@ public class Anamnesis {
 
     public void setFamilyList(List<Family> familyList) {
         this.familyList = familyList;
+    }
+
+    public List<Work_History> getWork_histories() {
+        return work_histories;
+    }
+
+    public void setWork_histories(List<Work_History> work_histories) {
+        this.work_histories = work_histories;
     }
 }
 
