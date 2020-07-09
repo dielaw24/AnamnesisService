@@ -1,4 +1,4 @@
-package com.anamnesis.model;
+package com.anamnesis.AnamnesisService.model;
 
 import javax.persistence.*;
 

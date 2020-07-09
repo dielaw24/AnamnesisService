@@ -1,7 +1,7 @@
-package com.anamnesis.controller;
+package com.anamnesis.AnamnesisService.controller;
 
-import com.anamnesis.model.DiseaseGroup;
-import com.anamnesis.repository.DiseaseGroupRepository;
+import com.anamnesis.AnamnesisService.model.DiseaseGroup;
+import com.anamnesis.AnamnesisService.repository.DiseaseGroupRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

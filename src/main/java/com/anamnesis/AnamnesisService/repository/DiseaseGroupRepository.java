@@ -1,6 +1,6 @@
-package com.anamnesis.repository;
+package com.anamnesis.AnamnesisService.repository;
 
-import com.anamnesis.model.DiseaseGroup;
+import com.anamnesis.AnamnesisService.model.DiseaseGroup;
 import org.springframework.data.repository.CrudRepository;
 
 public interface DiseaseGroupRepository extends CrudRepository<DiseaseGroup,Integer> {
