@@ -12,6 +12,13 @@ public class Disease {
     @Column(name = "enfermedad")
     private String disease;
 
+    //Relacion manytoOne
+    //Relacion Grupo Enfermedades
+    @ManyToOne
+    @JoinColumn(name = "id_grupo_enfermedad")
+    private DiseaseGroup diseaseGroup;
+
+
     //Relacion ManytoMany
     //Relacion Diagnostico Presuntivo / clases Anamnesis y PresumptiveDiagnostic
     @OneToMany(mappedBy = "disease")
@@ -39,5 +46,13 @@ public class Disease {
 
     public void setPresumptiveDiagnosticList(List<PresumptiveDiagnostic> presumptiveDiagnosticList) {
         this.presumptiveDiagnosticList = presumptiveDiagnosticList;
+    }
+
+    public DiseaseGroup getDiseaseGroup() {
+        return diseaseGroup;
+    }
+
+    public void setDiseaseGroup(DiseaseGroup diseaseGroup) {
+        this.diseaseGroup = diseaseGroup;
     }
 }

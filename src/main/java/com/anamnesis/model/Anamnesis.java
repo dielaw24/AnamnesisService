@@ -27,15 +27,15 @@ public class Anamnesis {
 
     //claves foraneas locales/ Relacion ManyToOne
     //antecedentes personales patologicos
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "id_antecedente_p_patologico")
     private Pathological_personal_history pathological_personal_history;
     //antecedentes personales no patologicos
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @Column(name = "id_antecedente_p_no_patologico")
     private No_Pathological_personal_history no_pathological_personal_history;
     //condiciones vivienda
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @Column(name = "id_condiciones_vivienda")
     private Housing_conditions housing_conditions;
 

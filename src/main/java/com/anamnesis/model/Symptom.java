@@ -14,6 +14,12 @@ public class Symptom {
     @Column(name = "nombre_sintoma")
     private String symptom_name;
 
+    //Relacion ManyToOne
+    //Relacion con GrupoSintomas SymptomGroup
+    @ManyToOne
+    @JoinColumn(name = "id_grupo_sintoma")
+    private SymptomGroup symptomGroup;
+
     //Relacion ManytoMany
     //Relacion sintomas paciente / clases Anamnesis y PatientSymptom
     @OneToMany(mappedBy = "symptom")
@@ -55,5 +61,13 @@ public class Symptom {
 
     public void setPatientSymptomList(List<PatientSymptom> patientSymptomList) {
         this.patientSymptomList = patientSymptomList;
+    }
+
+    public SymptomGroup getSymptomGroup() {
+        return symptomGroup;
+    }
+
+    public void setSymptomGroup(SymptomGroup symptomGroup) {
+        this.symptomGroup = symptomGroup;
     }
 }

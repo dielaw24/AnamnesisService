@@ -45,5 +45,5 @@ public class PatientSymptom {
     public void setSymptom(Symptom symptom) {
         this.symptom = symptom;
     }
-    
+
 }
