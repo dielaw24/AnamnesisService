@@ -2,6 +2,7 @@ package com.anamnesis.model;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name="Anamnesis")
@@ -22,7 +23,7 @@ public class Anamnesis {
     private int id_physical_exam;    // id lo obtenemos del microservicio de examen fisico
     @Column(name = "id_paciente")
     private int id_patient;  // id lo obtenemos del microservicio de historial clinico, id atencion o historial o paciente o todos
-    //claves foraneas locales
+    //claves foraneas locales/ Relacion ManyToOne
     //antecedentes personales patologicos
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_antecedente_p_patologico")
@@ -35,7 +36,17 @@ public class Anamnesis {
     @ManyToOne(fetch = FetchType.LAZY)
     @Column(name = "id_condiciones_vivienda")
     private Housing_conditions housing_conditions;
-    
+
+    //Relaciones ManyToMany
+    //Relacion antecedentes familiares / clase Family
+    @ManyToMany
+    @JoinTable(
+            name = "Antecedentes_Familiares",
+            joinColumns = @JoinColumn(name = "id_anamnesis"),
+            inverseJoinColumns = @JoinColumn(name = "id_familiar")
+    )
+    private List<Family> familyList;
+
 
     public int getId() {
         return id;
@@ -109,7 +120,12 @@ public class Anamnesis {
         this.actual_disease = actual_disease;
     }
 
+    public List<Family> getFamilyList() {
+        return familyList;
+    }
 
-
+    public void setFamilyList(List<Family> familyList) {
+        this.familyList = familyList;
+    }
 }
 

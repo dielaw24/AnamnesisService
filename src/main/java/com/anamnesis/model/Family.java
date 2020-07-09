@@ -1,16 +1,15 @@
 package com.anamnesis.model;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table (name="Familiar")
 public class Family {
     @Id
     @Column(name = "id_familiar")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     @Column(name="cedula")
     private String cedula;
@@ -20,6 +19,11 @@ public class Family {
     private String disease;
     @Column(name="relacion")
     private String relationship;
+
+    //Relacion ManytoMany
+    // relacion antecedentes familiares / clase Anamnesis
+    @ManyToMany(mappedBy = "familyList")
+    private List<Anamnesis> anamneses;
 
     public int getId() {
         return id;
@@ -59,5 +63,13 @@ public class Family {
 
     public void setRelationship(String relationship) {
         this.relationship = relationship;
+    }
+
+    public List<Anamnesis> getAnamneses() {
+        return anamneses;
+    }
+
+    public void setAnamneses(List<Anamnesis> anamneses) {
+        this.anamneses = anamneses;
     }
 }
