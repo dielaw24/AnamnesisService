@@ -1,32 +1,41 @@
 package com.anamnesis.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name="Anamnesis")
 public class Anamnesis {
     @Id
     @Column(name = "id_anamnesis")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    @Column(name = "id_antecedente_p_patologico")
-    private String id_pathological_history;
-    @Column(name = "id_antecedente_np_patologico")
-    private String id_no_pathological_history;
-    @Column(name = "id_historial_clinico")
-    private String id_clinical_history;
+    //Datos anamnesis
     @Column(name = "motivo_consulta")
     private String reason_consultation;
     @Column(name = "enfermedad_acutal")
     private String actual_disease;
-    @Column(name = "id_examen_fisico")
-    private String id_physical_test;
     @Column(name = "fecha_padecimiento")
-    private String condition_Date;
+    private Date condition_Date;
+    //claves foraneas No locales
+    @Column(name = "id_examen_fisico")
+    private int id_physical_exam;    // id lo obtenemos del microservicio de examen fisico
+    @Column(name = "id_paciente")
+    private int id_patient;  // id lo obtenemos del microservicio de historial clinico, id atencion o historial o paciente o todos
+    //claves foraneas locales
+    //antecedentes personales patologicos
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_antecedente_p_patologico")
+    private Pathological_personal_history pathological_personal_history;
+    //antecedentes personales no patologicos
+    @ManyToOne(fetch = FetchType.LAZY)
+    @Column(name = "id_antecedente_p_no_patologico")
+    private No_Pathological_personal_history no_pathological_personal_history;
+    //condiciones vivienda
+    @ManyToOne(fetch = FetchType.LAZY)
     @Column(name = "id_condiciones_vivienda")
-    private String id_housing_condition;
+    private Housing_conditions housing_conditions;
+    
 
     public int getId() {
         return id;
@@ -36,28 +45,52 @@ public class Anamnesis {
         this.id = id;
     }
 
-    public String getId_pathological_history() {
-        return id_pathological_history;
+    public Pathological_personal_history getPathological_personal_history() {
+        return pathological_personal_history;
     }
 
-    public void setId_pathological_history(String id_pathological_history) {
-        this.id_pathological_history = id_pathological_history;
+    public void setPathological_personal_history(Pathological_personal_history pathological_personal_history) {
+        this.pathological_personal_history = pathological_personal_history;
     }
 
-    public String getId_no_pathological_history() {
-        return id_no_pathological_history;
+    public Date getCondition_Date() {
+        return condition_Date;
     }
 
-    public void setId_no_pathological_history(String id_no_pathological_history) {
-        this.id_no_pathological_history = id_no_pathological_history;
+    public void setCondition_Date(Date condition_Date) {
+        this.condition_Date = condition_Date;
     }
 
-    public String getId_clinical_history() {
-        return id_clinical_history;
+    public int getId_physical_exam() {
+        return id_physical_exam;
     }
 
-    public void setId_clinical_history(String id_clinical_history) {
-        this.id_clinical_history = id_clinical_history;
+    public void setId_physical_exam(int id_physical_exam) {
+        this.id_physical_exam = id_physical_exam;
+    }
+
+    public int getId_patient() {
+        return id_patient;
+    }
+
+    public void setId_patient(int id_patient) {
+        this.id_patient = id_patient;
+    }
+
+    public No_Pathological_personal_history getNo_pathological_personal_history() {
+        return no_pathological_personal_history;
+    }
+
+    public void setNo_pathological_personal_history(No_Pathological_personal_history no_pathological_personal_history) {
+        this.no_pathological_personal_history = no_pathological_personal_history;
+    }
+
+    public Housing_conditions getHousing_conditions() {
+        return housing_conditions;
+    }
+
+    public void setHousing_conditions(Housing_conditions housing_conditions) {
+        this.housing_conditions = housing_conditions;
     }
 
     public String getReason_consultation() {
@@ -76,28 +109,7 @@ public class Anamnesis {
         this.actual_disease = actual_disease;
     }
 
-    public String getId_physical_test() {
-        return id_physical_test;
-    }
 
-    public void setId_physical_test(String id_physical_test) {
-        this.id_physical_test = id_physical_test;
-    }
 
-    public String getCondition_Date() {
-        return condition_Date;
-    }
-
-    public void setCondition_Date(String condition_Date) {
-        this.condition_Date = condition_Date;
-    }
-
-    public String getId_housing_condition() {
-        return id_housing_condition;
-    }
-
-    public void setId_housing_condition(String id_housing_condition) {
-        this.id_housing_condition = id_housing_condition;
-    }
 }
 
