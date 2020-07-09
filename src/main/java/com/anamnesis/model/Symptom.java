@@ -33,4 +33,17 @@ public class Symptom {
     public String getSymptom_name() {
         return symptom_name;
     }
+
+    public void setId_symptom(int id_symptom) {
+        this.id_symptom = id_symptom;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setSymptom_name(String symptom_name) {
+        this.symptom_name = symptom_name;
+    }
+
 }
