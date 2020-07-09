@@ -14,6 +14,7 @@ public class WorkHistory {
     private Date start_work_date;
     @Column(name = "fecha_fin_trabajo")
     private Date end_work_date;
+
     //Relacion ManytoMany / clases Anamnesis y Work
     //Relacion antecedentes laborales
     @ManyToOne

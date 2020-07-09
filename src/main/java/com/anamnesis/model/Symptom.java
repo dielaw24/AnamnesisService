@@ -1,9 +1,7 @@
 package com.anamnesis.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "Sintoma")
@@ -16,10 +14,15 @@ public class Symptom {
     @Column(name = "nombre_sintoma")
     private String symptom_name;
 
+    //Relacion ManytoMany
+    //Relacion sintomas paciente / clases Anamnesis y PatientSymptom
+    @OneToMany(mappedBy = "symptom")
+    private List<PatientSymptom> patientSymptomList;
+
 
     /*
-    * Id_sintoma forma R061, R062, ....
-    * id grupo sintoma R06
+    * Id_sintoma forma :R061, R062, ....
+    * id grupo sintoma forma : R06
     *
     * */
     public int getId_symptom() {
@@ -46,4 +49,11 @@ public class Symptom {
         this.symptom_name = symptom_name;
     }
 
+    public List<PatientSymptom> getPatientSymptomList() {
+        return patientSymptomList;
+    }
+
+    public void setPatientSymptomList(List<PatientSymptom> patientSymptomList) {
+        this.patientSymptomList = patientSymptomList;
+    }
 }

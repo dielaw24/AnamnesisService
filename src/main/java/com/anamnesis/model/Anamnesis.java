@@ -162,6 +162,6 @@ public class Anamnesis {
         this.patientSymptomList = patientSymptomList;
     }
 
-    
+
 }
 
