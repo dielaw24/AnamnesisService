@@ -51,10 +51,13 @@ public class Anamnesis {
 
     //Relacion antecedentes laborales / clases work y work_history
     @OneToMany(mappedBy = "anamnesis")
-    private List<Work_History> work_histories;
+    private List<Work_History> workHistoryList;
 
     //Relacion diagnostico presuntivo
-    @OneToMany
+    @OneToMany(mappedBy = "anamnesis")
+    private List<PresumptiveDiagnostic> presumptiveDiagnosticList;
+
+
 
     public int getId() {
         return id;
@@ -136,12 +139,20 @@ public class Anamnesis {
         this.familyList = familyList;
     }
 
-    public List<Work_History> getWork_histories() {
-        return work_histories;
+    public List<Work_History> getWorkHistoryList() {
+        return workHistoryList;
     }
 
-    public void setWork_histories(List<Work_History> work_histories) {
-        this.work_histories = work_histories;
+    public void setWorkHistoryList(List<Work_History> workHistoryList) {
+        this.workHistoryList = workHistoryList;
+    }
+
+    public List<PresumptiveDiagnostic> getPresumptiveDiagnosticList() {
+        return presumptiveDiagnosticList;
+    }
+
+    public void setPresumptiveDiagnosticList(List<PresumptiveDiagnostic> presumptiveDiagnosticList) {
+        this.presumptiveDiagnosticList = presumptiveDiagnosticList;
     }
 }
 

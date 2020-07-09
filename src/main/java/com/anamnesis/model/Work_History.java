@@ -9,20 +9,20 @@ public class Work_History {
     @Id
     @Column(name = "id")
     private int id;
-
+    @Column(name = "fecha_inicio_trabajo")
+    private Date start_work_date;
+    @Column(name = "fecha_fin_trabajo")
+    private Date end_work_date;
     //Relacion ManytoMany / clases Anamnesis y Work
     //Relacion antecedentes laborales
-    @ManyToMany
+    @ManyToOne
     @JoinColumn(name = "id_anamnesis")
     private Anamnesis anamnesis;
 
-    @ManyToMany
+    @ManyToOne
     @JoinColumn(name = "id_trabajo")
     private Work work;
 
-    private Date start_work_date;
-
-    private Date end_work_date;
 
     public int getId() {
         return id;
