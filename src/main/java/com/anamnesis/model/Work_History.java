@@ -8,6 +8,7 @@ import java.util.Date;
 public class Work_History {
     @Id
     @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     @Column(name = "fecha_inicio_trabajo")
     private Date start_work_date;

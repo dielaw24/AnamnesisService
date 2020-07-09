@@ -7,6 +7,7 @@ import javax.persistence.*;
 public class PresumptiveDiagnostic {
     @Id
     @Column(name = "id_diagnostico_presuntivo")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id_diagnostic;
     @Column(name = "diagnostico")
     private String diagnostic;
