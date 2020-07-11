@@ -14,27 +14,29 @@ import org.springframework.web.server.ResponseStatusException;
 public class FamilyController {
     @Autowired
     FamilyRepository familyRepository;
-
+    //obtener todos los familiares de los antecedente familiares
     @GetMapping
     public Iterable<Family> getAllFamily(){
         return familyRepository.findAll();
     }
-
+    //obtener un familiar por id
     @GetMapping ("/{id_familiar}")
     public Family getFamilyById(@PathVariable(value="id_familiar") Integer id) {
         return familyRepository.findById(id).orElseGet(() -> {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Family dont found");
         });
     }
+    //agregar un familar
     @PostMapping
     public Family addFamily(@RequestBody  Family family) {
         return familyRepository.save(family);
     }
+    //actualizar familiar
     @PutMapping
     public Family updateFamily(@RequestBody Family family) {
         return familyRepository.save(family);
     }
-
+    //eliminar familiar
     @DeleteMapping("/{id_familiar}")
     public void deleteFamily(@PathVariable (value="id_familiar") Integer id) {
         if(familyRepository.findById(id).isPresent()) {
