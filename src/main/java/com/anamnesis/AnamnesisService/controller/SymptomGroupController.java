@@ -1,9 +1,19 @@
 package com.anamnesis.AnamnesisService.controller;
+/*
+Autores:
+    Moyano Juan
+    Tapia Diego
+Docente:
+    Ing. Villie Morocho
+Facultad de Ingenieria
+Universidad de Cuenca
 
-import com.anamnesis.AnamnesisService.model.Symptom;
+Este módulo fue desarrollado como parte de la materia Base de Datos II , periodo marzo-julio 2020
+
+*/
+
 import com.anamnesis.AnamnesisService.model.SymptomGroup;
 import com.anamnesis.AnamnesisService.repository.SymptomGroupRepository;
-import com.anamnesis.AnamnesisService.repository.SymptomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

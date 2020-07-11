@@ -1,5 +1,17 @@
 package com.anamnesis.AnamnesisService.controller;
 
+/*
+Autores:
+    Moyano Juan
+    Tapia Diego
+Docente:
+    Ing. Villie Morocho
+Facultad de Ingenieria
+Universidad de Cuenca
+
+Este módulo fue desarrollado como parte de la materia Base de Datos II , periodo marzo-julio 2020
+
+*/
 import com.anamnesis.AnamnesisService.model.Work;
 import com.anamnesis.AnamnesisService.repository.WorkRepository;
 import org.springframework.beans.factory.annotation.Autowired;
