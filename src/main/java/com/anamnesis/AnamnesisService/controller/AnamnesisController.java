@@ -49,7 +49,7 @@ public class AnamnesisController {
     public void deleteAnamnesis(@PathVariable (value="id_anamnesis") Integer id) {
         if(anamnesisRepository.findById(id).isPresent()) {
             anamnesisRepository.delete(anamnesisRepository.findById(id).get());
-            //studentRepo.deleteById(id);
+
         } else {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Anamnesis dont found");
         }
