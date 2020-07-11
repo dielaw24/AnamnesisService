@@ -9,6 +9,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 @RestController
 @RequestMapping("/api/work")
+@CrossOrigin (origins="*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.DELETE, RequestMethod.PUT})
 public class WorkConditionController {
     @Autowired
     WorkConditionRepository workConditionRepository;
