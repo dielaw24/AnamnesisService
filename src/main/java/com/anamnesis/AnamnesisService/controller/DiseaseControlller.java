@@ -40,7 +40,7 @@ public class DiseaseControlller {
     }
 
     // eliminar una enfermedad por su id
-    @DeleteMapping("{/id_disease}")
+    @DeleteMapping("/{id_disease}")
     public void deleteDisease(@PathVariable (value = "id_disease") String id){
         if(diseaseRepository.findById(id).isPresent()){
             diseaseRepository.delete(diseaseRepository.findById(id).get());

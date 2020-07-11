@@ -29,15 +29,15 @@ public class Anamnesis {
     //antecedentes personales patologicos
     @ManyToOne
     @JoinColumn(name = "id_antecedente_p_patologico")
-    private Pathological_personal_history pathological_personal_history;
+    private PathologicalPersonalHistory pathological_personal_history;
     //antecedentes personales no patologicos
     @ManyToOne
     @JoinColumn(name = "id_antecedente_p_no_patologico")
-    private No_Pathological_personal_history no_pathological_personal_history;
+    private NoPathologicalPersonalHistory no_pathological_personal_history;
     //condiciones vivienda
     @ManyToOne
     @JoinColumn(name = "id_condiciones_vivienda")
-    private Housing_conditions housing_conditions;
+    private HousingConditions housing_conditions;
 
     //Relaciones ManyToMany
 
@@ -66,11 +66,11 @@ public class Anamnesis {
         this.id = id;
     }
 
-    public Pathological_personal_history getPathological_personal_history() {
+    public PathologicalPersonalHistory getPathological_personal_history() {
         return pathological_personal_history;
     }
 
-    public void setPathological_personal_history(Pathological_personal_history pathological_personal_history) {
+    public void setPathological_personal_history(PathologicalPersonalHistory pathological_personal_history) {
         this.pathological_personal_history = pathological_personal_history;
     }
 
@@ -98,19 +98,19 @@ public class Anamnesis {
         this.id_patient = id_patient;
     }
 
-    public No_Pathological_personal_history getNo_pathological_personal_history() {
+    public NoPathologicalPersonalHistory getNo_pathological_personal_history() {
         return no_pathological_personal_history;
     }
 
-    public void setNo_pathological_personal_history(No_Pathological_personal_history no_pathological_personal_history) {
+    public void setNo_pathological_personal_history(NoPathologicalPersonalHistory no_pathological_personal_history) {
         this.no_pathological_personal_history = no_pathological_personal_history;
     }
 
-    public Housing_conditions getHousing_conditions() {
+    public HousingConditions getHousing_conditions() {
         return housing_conditions;
     }
 
-    public void setHousing_conditions(Housing_conditions housing_conditions) {
+    public void setHousing_conditions(HousingConditions housing_conditions) {
         this.housing_conditions = housing_conditions;
     }
 

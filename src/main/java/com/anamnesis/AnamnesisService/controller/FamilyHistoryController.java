@@ -22,7 +22,7 @@ public class FamilyHistoryController {
     }
 
     //Obtener antecedente familiar por id
-    @GetMapping("{/id_ant_familiar}")
+    @GetMapping("/{id_ant_familiar}")
     public FamilyHistory getFamiliyHistoryById(@PathVariable(value = "id_ant_familiar") Integer id){
         return familyHistoryRepository.findById(id).orElseGet(() -> {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"FamilyHistory dont found");
@@ -39,7 +39,7 @@ public class FamilyHistoryController {
         return familyHistoryRepository.save(familyHistory);
     }
     // eliminar antecedente familiar por id
-    @DeleteMapping("{/id_ant_familiar}")
+    @DeleteMapping("/{id_ant_familiar}")
     public void  deleteFamilyHistory(@PathVariable (value = "id_ant_familiar") Integer id){
         if(familyHistoryRepository.findById(id).isPresent()){
             familyHistoryRepository.delete(familyHistoryRepository.findById(id).get());

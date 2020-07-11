@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="Antecedentes_Personales_Patologicos")
-public class Pathological_personal_history {
+public class PathologicalPersonalHistory {
     @Id
     @Column(name = "id_antecedentes_personales_P")
     @GeneratedValue(strategy = GenerationType.AUTO)
