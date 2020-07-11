@@ -8,7 +8,7 @@ import java.util.List;
 public class Disease {
     @Id
     @Column(name = "id_enfermedad")
-    private int id_disease;
+    private String id_disease;
     @Column(name = "enfermedad")
     private String disease;
 
@@ -24,7 +24,7 @@ public class Disease {
     @OneToMany(mappedBy = "disease")
     private List<PresumptiveDiagnostic> presumptiveDiagnosticList;
 
-    public int getId_disease() {
+    public String getId_disease() {
         return id_disease;
     }
 
@@ -32,7 +32,7 @@ public class Disease {
         return disease;
     }
 
-    public void setId_disease(int id_disease) {
+    public void setId_disease(String id_disease) {
         this.id_disease = id_disease;
     }
 

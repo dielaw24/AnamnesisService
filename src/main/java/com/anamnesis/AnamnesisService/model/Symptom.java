@@ -8,7 +8,7 @@ import java.util.List;
 public class Symptom {
     @Id
     @Column(name = "id_sintoma")
-    private int id_symptom;
+    private String id_symptom;
     @Column(name = "descripcion")
     private String description;
     @Column(name = "nombre_sintoma")
@@ -31,7 +31,7 @@ public class Symptom {
     * id grupo sintoma forma : R06
     *
     * */
-    public int getId_symptom() {
+    public String getId_symptom() {
         return id_symptom;
     }
 
@@ -43,7 +43,7 @@ public class Symptom {
         return symptom_name;
     }
 
-    public void setId_symptom(int id_symptom) {
+    public void setId_symptom(String id_symptom) {
         this.id_symptom = id_symptom;
     }
 

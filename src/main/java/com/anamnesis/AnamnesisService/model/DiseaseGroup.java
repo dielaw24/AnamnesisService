@@ -10,11 +10,11 @@ import javax.persistence.Table;
 public class DiseaseGroup {
     @Id
     @Column(name = "id_grupo_enfermedad")
-    private int id_disease_group;
+    private String id_disease_group;
     @Column(name = "grupo_enfermedad")
     private String disease_group;
 
-    public int getId_disease_group() {
+    public  String getId_disease_group() {
         return id_disease_group;
     }
 
@@ -22,7 +22,7 @@ public class DiseaseGroup {
         return disease_group;
     }
 
-    public void setId_disease_group(int id_disease_group) {
+    public void setId_disease_group(String id_disease_group) {
         this.id_disease_group = id_disease_group;
     }
 
