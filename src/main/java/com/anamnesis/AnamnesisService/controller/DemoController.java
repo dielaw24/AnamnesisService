@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api")
 public class DemoController {
-
+    //clase de prueba, eliminar despues
     @GetMapping("/home")
     public String getHome(){
         return ("Home Page");
