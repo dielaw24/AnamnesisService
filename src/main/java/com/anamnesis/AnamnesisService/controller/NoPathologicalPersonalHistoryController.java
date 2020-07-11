@@ -15,14 +15,14 @@ public class NoPathologicalPersonalHistoryController {
     NoPatPersonalHistoryRepository noPatPersonalHistoryRepository;
     // obtener todos los antecedentes personales no patologicos
     @GetMapping
-    public Iterable<NoPathologicalPersonalHistory> getAllNoPatologicalPersonalHistory(){
+    public Iterable<NoPathologicalPersonalHistory> getAllNoPathologicalPersonalHistory(){
         return  noPatPersonalHistoryRepository.findAll();
     }
     // obtener un antecedentes personales no patologicos por id
     @GetMapping("/{id_nopat_personal_hist}")
     public NoPathologicalPersonalHistory getNoPatPersonalHistoryById(@PathVariable(value = "id_nopat_personal_hist") Integer id){
         return noPatPersonalHistoryRepository.findById(id).orElseGet(() -> {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"NoPatologicalPersonalHistory dont found");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"NoPathologicalPersonalHistory dont found");
         });
     }
     // agregar un antecedentes personales no patologicos
@@ -36,12 +36,12 @@ public class NoPathologicalPersonalHistoryController {
         return noPatPersonalHistoryRepository.save(noPathologicalPersonalHistory);
     }
     // eliminar un antecedentes personales no patologicos por id
-
+    @DeleteMapping("/{id_nopat_personal_hist}")
     public void deleteNoPatPersonalHistory(@PathVariable(value = "id_nopat_personal_hist") Integer id){
         if(noPatPersonalHistoryRepository.findById(id).isPresent()){
             noPatPersonalHistoryRepository.delete(noPatPersonalHistoryRepository.findById(id).get());
         }  else {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"NoPatologicalPersonalHistory dont found");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"NoPathologicalPersonalHistory dont found");
         }
     }
 
