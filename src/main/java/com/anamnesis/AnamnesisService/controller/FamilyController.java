@@ -39,7 +39,6 @@ public class FamilyController {
     public void deleteFamily(@PathVariable (value="id_familiar") Integer id) {
         if(familyRepository.findById(id).isPresent()) {
             familyRepository.delete(familyRepository.findById(id).get());
-            //studentRepo.deleteById(id);
         } else {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Family dont found");
         }
