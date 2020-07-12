@@ -14,6 +14,8 @@ Este módulo fue desarrollado como parte de la materia Base de Datos II , period
 import com.anamnesis.AnamnesisService.model.Disease;
 import com.anamnesis.AnamnesisService.repository.DiseaseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
