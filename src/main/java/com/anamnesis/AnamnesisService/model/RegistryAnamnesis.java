@@ -16,17 +16,18 @@ public class RegistryAnamnesis {
     @Column(name = "id_registro")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id_register;
-
-    @Column(name = "id_anamnesis")
-    private int id_anamnesis;
+    //solo id de personal medico, se planea/ba comsumir de otro servicio
     @Column(name = "id_personal_medico")
     private int id_medical_staff;
     @Column (name = "fecha_anamnesis")
     private Date anamnesis_date;
 
-    public int getId_anamnesis() {
-        return id_anamnesis;
-    }
+
+    //Relacion ManytoMan
+    //Relacion registro anamnesis
+    @ManyToOne
+    @JoinColumn(name = "id_anamneis")
+    private Anamnesis anamnesis;
 
     public int getId_medical() {
         return id_medical_staff;
@@ -36,9 +37,7 @@ public class RegistryAnamnesis {
         return anamnesis_date;
     }
 
-    public void setId_anamnesis(int id_anamnesis) {
-        this.id_anamnesis = id_anamnesis;
-    }
+
 
     public void setId_medical_staff(int id_medical_staff) {
         this.id_medical_staff = id_medical_staff;
