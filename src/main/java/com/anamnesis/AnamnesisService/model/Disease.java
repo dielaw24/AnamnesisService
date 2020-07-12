@@ -11,14 +11,11 @@ public class Disease {
     private String id_disease;
     @Column(name = "enfermedad")
     private String disease;
-
     //Relacion manytoOne
     //Relacion Grupo Enfermedades
     @ManyToOne
     @JoinColumn(name = "id_grupo_enfermedad")
     private DiseaseGroup diseaseGroup;
-
-
     //Relacion ManytoMany
     //Relacion Diagnostico Presuntivo / clases Anamnesis y PresumptiveDiagnostic
     @OneToMany(mappedBy = "disease")
