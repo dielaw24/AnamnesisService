@@ -33,6 +33,11 @@ public class DiseaseControlller {
         return  diseaseRepository.findAll();
     }
 
+    //buscar enfermedad por nombre
+    @GetMapping("/search/{disease_name}")
+    public Iterable<Disease> getDiseaseByName(@PathVariable(value = "disease_name") String name){
+        return diseaseRepository.findByDiseaseName(name);
+    }
     // obtener una enfermedad por su id
     @GetMapping("/{id_disease}")
     public Disease getDiseasebyId(@PathVariable(value = "id_disease") String id){
