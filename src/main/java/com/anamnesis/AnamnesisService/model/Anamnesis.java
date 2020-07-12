@@ -38,7 +38,6 @@ public class Anamnesis {
     @ManyToOne
     @JoinColumn(name = "id_condiciones_vivienda")
     private HousingConditions housing_conditions;
-
     //Relaciones ManyToMany
 
     //Relacion antecedentes familiares / clase Family
@@ -57,6 +56,9 @@ public class Anamnesis {
     @OneToMany(mappedBy = "anamnesis")
     private List<PatientSymptom> patientSymptomList;
 
+    // relacion registro anamnesis / clase RegistryAnamnesis
+    @OneToMany(mappedBy = "anamnesis")
+    private List<RegistryAnamnesis> registryAnamneses;
 
     public int getId() {
         return id;
