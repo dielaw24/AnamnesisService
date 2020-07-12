@@ -26,7 +26,7 @@ Este módulo fue desarrollado como parte de la materia Base de Datos II , period
 @RequestMapping("/api/summary")
 @CrossOrigin(origins="*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.DELETE, RequestMethod.PUT})
 public class AnamnesisSummaryController {
-    @Autowired
+    /*@Autowired
     AnamnesisRepository anamnesisRepository;
     @Autowired
     NoPatPersonalHistoryRepository noPatPersonalHistoryRepository;
@@ -46,7 +46,7 @@ public class AnamnesisSummaryController {
     @GetMapping("/{id_paciente}")
     public void getSummaryAnamnesisById(){
 
-    }
+    }*/
 
 
 }

@@ -22,8 +22,10 @@ public class Symptom {
 
     //Relacion ManytoMany
     //Relacion sintomas paciente / clases Anamnesis y PatientSymptom
-    @OneToMany(mappedBy = "symptom")
-    private List<PatientSymptom> patientSymptomList;
+    @Column(name = "id_sintoma_paciente")
+    private int id_patient_symptom;
+    /*@OneToMany(mappedBy = "symptom")
+    private List<PatientSymptom> patientSymptomList;*/
 
 
     /*
@@ -55,12 +57,12 @@ public class Symptom {
         this.symptom_name = symptom_name;
     }
 
-    public List<PatientSymptom> getPatientSymptomList() {
-        return patientSymptomList;
+    public int getId_patient_symptom() {
+        return id_patient_symptom;
     }
 
-    public void setPatientSymptomList(List<PatientSymptom> patientSymptomList) {
-        this.patientSymptomList = patientSymptomList;
+    public void setId_patient_symptom(int id_patient_symptom) {
+        this.id_patient_symptom = id_patient_symptom;
     }
 
     public SymptomGroup getSymptomGroup() {
