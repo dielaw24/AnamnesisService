@@ -164,6 +164,12 @@ public class Anamnesis {
         this.patientSymptomList = patientSymptomList;
     }
 
+    public List<RegistryAnamnesis> getRegistryAnamneses() {
+        return registryAnamneses;
+    }
 
+    public void setRegistryAnamneses(List<RegistryAnamnesis> registryAnamneses) {
+        this.registryAnamneses = registryAnamneses;
+    }
 }
 
