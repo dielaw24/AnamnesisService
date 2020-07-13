@@ -36,6 +36,12 @@ public class SymptomController {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Symptom dont found");
         });
     }
+
+    // buscar sintoma por nombre
+    @GetMapping("/search/{symptom_name}")
+    public Iterable<Symptom> getSymptomByName(@PathVariable(value = "symptom_name") String name){
+        return symptomRepository.findBySymptomName(name);
+    }
     // agregar sintoma
     @PostMapping
     public Symptom addSymptom(@RequestBody Symptom symptom){
