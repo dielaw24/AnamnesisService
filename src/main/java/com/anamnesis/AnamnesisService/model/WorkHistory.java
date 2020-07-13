@@ -1,5 +1,7 @@
 package com.anamnesis.AnamnesisService.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -19,6 +21,7 @@ public class WorkHistory {
     //Relacion antecedentes laborales
     @ManyToOne
     @JoinColumn(name = "id_anamnesis")
+    @JsonIgnore
     private Anamnesis anamnesis;
 
     @ManyToOne

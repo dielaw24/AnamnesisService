@@ -1,5 +1,7 @@
 package com.anamnesis.AnamnesisService.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -18,6 +20,7 @@ public class FamilyHistory {
     private Family family;
     @ManyToOne
     @JoinColumn(name = "id_anamnesis")
+    @JsonIgnore
     private Anamnesis anamnesis;
 
     public int getId_family_history() {

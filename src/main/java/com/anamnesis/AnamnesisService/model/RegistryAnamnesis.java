@@ -1,6 +1,8 @@
 package com.anamnesis.AnamnesisService.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -27,6 +29,7 @@ public class RegistryAnamnesis {
     //Relacion registro anamnesis
     @ManyToOne
     @JoinColumn(name = "id_anamneis")
+    @JsonIgnore
     private Anamnesis anamnesis;
 
     public int getId_medical() {
