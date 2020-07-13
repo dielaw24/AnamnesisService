@@ -1,5 +1,7 @@
 package com.anamnesis.AnamnesisService.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -16,6 +18,7 @@ public class PresumptiveDiagnostic {
     //Relacion Diagnostico Presuntivo // clases Diesease y Anamnesis
     @ManyToOne
     @JoinColumn(name = "id_anamnesis")
+    @JsonIgnore
     private Anamnesis anamnesis;
 
     @ManyToOne
