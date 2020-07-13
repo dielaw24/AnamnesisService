@@ -44,10 +44,12 @@ public class Anamnesis {
 
     //Relacion antecedentes familiares / clase Family
     @OneToMany(mappedBy = "anamnesis")
+    @JsonIgnore
     private List<FamilyHistory> familyHistoryList;
 
     //Relacion antecedentes laborales / clases work y work_history
     @OneToMany(mappedBy = "anamnesis")
+    @JsonIgnore
     private List<WorkHistory> workHistoryList;
 
     //Relacion diagnostico presuntivo / clases Disease y PresumptiveDiagnostic
