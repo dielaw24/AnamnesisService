@@ -64,11 +64,9 @@ public class AnamnesisController {
         });
     }
 
-    @GetMapping ("/{id_paciente}")
-    public Anamnesis getAnamnesisByPateientId(@PathVariable(value="id_paciente") Integer id) {
-        return anamnesisRepository.findById(id).orElseGet(() -> {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Anamnesis dont found");
-        });
+    @GetMapping ("patient/{id_paciente}")
+    public Iterable<Anamnesis> getAnamnesisByPateientId(@PathVariable(value="id_paciente") Integer id) {
+        return anamnesisRepository.findByPatientId(id);
     }
 
 
