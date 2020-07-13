@@ -35,8 +35,6 @@ public class AnamnesisSummaryController {
     @Autowired
     HousingConditionsRepository housingConditionsRepository;
     @Autowired
-    WorkHistory workHistory;
-    @Autowired
     FamilyHistoryRepository familyHistoryRepository;
     @Autowired
     PresumptiveDiagnosticRepository presumptiveDiagnosticRepository;

@@ -43,7 +43,6 @@ public class FamilyController {
     public Family addFamily(@RequestBody  Family family) {
         return familyRepository.save(family);
     }
-    //actualizar familiar
     @PutMapping
     public Family updateFamily(@RequestBody Family family) {
         return familyRepository.save(family);
