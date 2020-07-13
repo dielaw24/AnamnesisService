@@ -22,9 +22,9 @@ public class Disease {
     //Relacion ManytoMany
     //Relacion Diagnostico Presuntivo / clases Anamnesis y PresumptiveDiagnostic
 
-    @OneToMany(mappedBy = "disease")
+    /*@OneToMany(mappedBy = "disease")
     @JsonIgnore
-    private List<PresumptiveDiagnostic> presumptiveDiagnosticList;
+    private List<PresumptiveDiagnostic> presumptiveDiagnosticList*/;
 
     public String getId_disease() {
         return id_disease;
@@ -41,15 +41,7 @@ public class Disease {
     public void setDisease(String disease) {
         this.disease = disease;
     }
-
-    public List<PresumptiveDiagnostic> getPresumptiveDiagnosticList() {
-        return presumptiveDiagnosticList;
-    }
-
-    public void setPresumptiveDiagnosticList(List<PresumptiveDiagnostic> presumptiveDiagnosticList) {
-        this.presumptiveDiagnosticList = presumptiveDiagnosticList;
-    }
-
+    
     public DiseaseGroup getDiseaseGroup() {
         return diseaseGroup;
     }
