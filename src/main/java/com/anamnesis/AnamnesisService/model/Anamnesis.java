@@ -1,5 +1,7 @@
 package com.anamnesis.AnamnesisService.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
@@ -29,35 +31,43 @@ public class Anamnesis {
     //antecedentes personales patologicos
     @ManyToOne
     @JoinColumn(name = "id_antecedente_p_patologico")
+    @JsonIgnore
     private PathologicalPersonalHistory pathological_personal_history;
     //antecedentes personales no patologicos
     @ManyToOne
     @JoinColumn(name = "id_antecedente_p_no_patologico")
+    @JsonIgnore
     private NoPathologicalPersonalHistory no_pathological_personal_history;
     //condiciones vivienda
     @ManyToOne
     @JoinColumn(name = "id_condiciones_vivienda")
+    @JsonIgnore
     private HousingConditions housing_conditions;
     //Relaciones ManyToMany
 
     //Relacion antecedentes familiares / clase Family
     @OneToMany(mappedBy = "anamnesis")
+    @JsonIgnore
     private List<FamilyHistory> familyHistoryList;
 
     //Relacion antecedentes laborales / clases work y work_history
     @OneToMany(mappedBy = "anamnesis")
+    @JsonIgnore
     private List<WorkHistory> workHistoryList;
 
     //Relacion diagnostico presuntivo / clases Disease y PresumptiveDiagnostic
     @OneToMany(mappedBy = "anamnesis")
+    @JsonIgnore
     private List<PresumptiveDiagnostic> presumptiveDiagnosticList;
 
     //Relacion Sintomas Paciente / clases Symptoms y PatientSymptoms
     @OneToMany(mappedBy = "anamnesis")
+    @JsonIgnore
     private List<PatientSymptom> patientSymptomList;
 
     // relacion registro anamnesis / clase RegistryAnamnesis
     @OneToMany(mappedBy = "anamnesis")
+    @JsonIgnore
     private List<RegistryAnamnesis> registryAnamneses;
 
     public int getId() {
