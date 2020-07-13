@@ -41,7 +41,7 @@ public class Disease {
     public void setDisease(String disease) {
         this.disease = disease;
     }
-    
+
     public DiseaseGroup getDiseaseGroup() {
         return diseaseGroup;
     }
