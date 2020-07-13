@@ -17,7 +17,6 @@ public class Disease {
     //Relacion Grupo Enfermedades
     @ManyToOne
     @JoinColumn(name = "id_grupo_enfermedad")
-    @JsonIgnore
     private DiseaseGroup diseaseGroup;
     //Relacion ManytoMany
     //Relacion Diagnostico Presuntivo / clases Anamnesis y PresumptiveDiagnostic
