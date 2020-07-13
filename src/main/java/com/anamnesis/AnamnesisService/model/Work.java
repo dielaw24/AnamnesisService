@@ -17,8 +17,8 @@ public class Work {
 
     //Relacion ManytoMany
     //Relacion antecedentes laborales / clase Anamnesis y work_history
-    @OneToMany(mappedBy = "work")
-    private List<WorkHistory> work_histories;
+    /*@OneToMany(mappedBy = "work")
+    private List<WorkHistory> work_histories;*/
 
     public int getId() {  return id; }
 
@@ -32,11 +32,11 @@ public class Work {
 
     public String getActivity_description() { return activity_description; }
 
-    public List<WorkHistory> getWork_histories() {
+    /*public List<WorkHistory> getWork_histories() {
         return work_histories;
     }
 
     public void setWork_histories(List<WorkHistory> work_histories) {
         this.work_histories = work_histories;
-    }
+    }*/
 }
